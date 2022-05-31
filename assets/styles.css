@@ -30,7 +30,7 @@ body {
   display: flex;
   flex: 0 1 auto;
   justify-content: first baseline;
-  background-color: var(--oxford-blue);
+  background-color: var(--black);
   padding: 1rem 1rem;
 }
 .navbar-links {
@@ -49,17 +49,32 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 0 1 auto;
-  font-size: 3rem;
-  padding: 2rem 1rem;
+  flex: 0.1 1 auto;
+  padding: 2rem 1rem 0 1rem;
   background-color: var(--prussian-blue);
   color: var(--white);
 }
+.banner-title {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
 .banner-button {
+  text-transform: capitalize;
   letter-spacing: 0.2rem;
+  font-size: 1.9rem;
+  margin-top: 2rem;
+  background-color: var(--orange-web);
+  border: none;
+  border-radius: 0.3rem;
+  width: 10rem;
+  height: 3rem;
+  color: var(--white);
+}
+.banner-button:hover {
+  cursor: pointer;
 }
 .banner-icon {
-  padding: 0.5rem;
+  padding-right: 0.4rem;
 }
 .main-content-container {
   display: flex;
