@@ -49,7 +49,14 @@ body {
 .main-content-container {
   display: flex;
   height: 70vh;
-  justify-content: center;
+  justify-content: flex-start;
+  border-style: double;
+}
+.main-tables {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 1rem 2rem;
   border-style: double;
 }
 .footer {
