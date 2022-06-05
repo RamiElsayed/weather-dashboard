@@ -28,12 +28,29 @@
     <main class="main">
       <div class="banner">
         <div class="banner-title">weather dashboard</div>
-        <div><button type="submit" class="banner-button"><i class="fa-solid fa-plus banner-icon"></i>new</button></div>
+        <hr class="banner-line" />
+        <div>
+          <button type="submit" class="banner-button">
+            <i class="fa-solid fa-plus banner-icon"></i>new
+          </button>
+        </div>
       </div>
       <div class="main-content-container">
-        <div class="main-tables">
-          <div>form</div>
-          <div>recent searches</div>
+        <div class="main-tables search-table">
+          <div class="search-table-elements box-title">
+            <h2>weather search</h2>
+            <hr/>
+          </div>
+            <form class="search-table-elements">
+              <div class="search-input">
+                <input
+                  type="text"
+                  placeholder="enter city"
+                />
+              </div>
+                <button type="submit" class="search-button">search</button>
+            </form>
+          <div class="search-table-elements cities">recent searches</div>
         </div>
         <div class="main-tables">
           <div>current data</div>
