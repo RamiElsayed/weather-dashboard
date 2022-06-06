@@ -25,11 +25,13 @@ body {
   flex-flow: column;
   height: 100%;
   margin: 0;
+  box-sizing: border-box;
 }
 /*header styling*/
 .navbar {
   display: flex;
   flex: 0 1 auto;
+  min-height: fit-content;
   background-color: var(--black);
   padding: 1.5rem 1rem;
 }
@@ -39,11 +41,15 @@ body {
   margin: 1rem;
   color: var(--white);
 }
-/*main styling*/
+
 .main {
-  display: flex;
-  flex-direction: column;
   flex: 1 1 auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  flex: auto;
+}
+.column {
+  padding: 0;
 }
 /*banner styling*/
 .banner {
@@ -66,7 +72,7 @@ body {
   text-transform: capitalize;
   letter-spacing: 0.2rem;
   font-size: 1.9rem;
-  margin-top: 2rem;
+  margin: 2rem;
   background-color: var(--orange-web);
   border: none;
   border-radius: 0.3rem;
@@ -83,34 +89,69 @@ body {
 /*main content tables*/
 .main-content-container {
   display: flex;
-  border-style: double;
-  flex: 1 1 auto;
+  flex: 3 1 auto;
 }
 .main-tables {
   margin: 3rem 2rem;
-  border-style: double;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+/*search table*/
 .search-table {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-size: 2rem;
   width: 40rem;
   height: 25rem;
 }
 .table-title {
   text-align: center;
   width: 90%;
+  color: var(--black);
 }
 .search-table-elements {
   margin: 1.2rem;
 }
-
-.search-button, .search-input {
+.search-input {
+  font-size: 2rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+}
+.search-button {
+  cursor: pointer;
   width: 100%;
-  margin-bottom: 2rem;
+  margin: 1rem 0;
+  background-color: var(--orange-web);
+  border: none;
+  border-radius: 0.3rem;
+  color: var(--white);
+  font-size: 2rem;
+  padding: 0.5rem 0;
 }
 .cities {
-  margin-top: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+/*temprature table*/
+.tempratures-table{
+  font-size: 2rem;
+}
+.current-city {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.box {
+  padding: 0;
+  margin: 1rem 0;
+}
+.index-column {
+  padding: 1rem;
+}
+.uv-index {
+  background-color: var(--prussian-blue);
+  color: var(--white);
+  padding: 0.2rem 1rem;
+  border-radius: 0.3rem;
 }
 /*footer styling*/
 .footer {

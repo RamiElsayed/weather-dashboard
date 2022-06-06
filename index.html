@@ -17,19 +17,23 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <link rel="stylesheet" href="./assets/styles.css" />
     <title>weather dashboard</title>
   </head>
   <body>
-    /*navbr*/
+    <!--navbar-->
     <header class="navbar">
       <a class="navbar-links" href="./index.html">home</a>
       <a class="navbar-links" href="./journal.html">journal</a>
     </header>
-    /*start of main*/
-    <main class="main">
-      /*banner*/
-      <div class="banner">
+    <!-- start of main -->
+    <main class="column main">
+      <!-- banner -->
+      <section class="banner">
         <div class="banner-title">weather dashboard</div>
         <hr class="banner-line" />
         <div>
@@ -37,32 +41,54 @@
             <i class="fa-solid fa-plus banner-icon"></i>new
           </button>
         </div>
-      </div>
-      /*main content*/
+      </section>
+      <!-- main content -->
       <div class="main-content-container">
-        <div class="main-tables search-table">
-          <div class="search-table-elements table-title">
+        <section class="main-tables search-table">
+          <div class="column search-table-elements table-title">
             <h2>weather search</h2>
-            <hr/>
+            <hr />
           </div>
-            <form class="search-table-elements">
-              <div class="search-input">
-                <input
-                  type="text"
-                  placeholder="enter city"
-                />
-              </div>
-                <button type="submit" class="search-button">search</button>
-            </form>
+          <form class="search-table-elements">
+            <div>
+              <input
+                class="column is-full search-input"
+                type="text"
+                placeholder="enter city"
+              />
+            </div>
+            <button type="submit" class="search-button">search</button>
+          </form>
           <div class="search-table-elements cities">recent searches</div>
-        </div>
-        <div class="main-tables">
-          <div>current data</div>
-          <div>forecast data</div>
-        </div>
+        </section>
+        <section class="column is-half main-tables">
+          <div class="column current-city">
+            <h2>Birmingham</h2>
+            <h3>Monday,06th June,2022</h3>
+          </div>
+          <div class="columns box tempratures-table">
+            <div class="column index-column">Temprature</div>
+            <div class="column index-column">16 &deg;c</div>
+          </div>
+          <div class="columns box tempratures-table">
+            <div class="column index-column">humidity</div>
+            <div class="column index-column">20&percnt;</div>
+          </div>
+          <div class="columns box tempratures-table">
+            <div class="column index-column">wind speed</div>
+            <div class="column index-column">10 mph</div>
+          </div>
+          <div class="columns box tempratures-table">
+            <div class="column index-column">uv index</div>
+            <div class="column index-column">
+              <span class="uv-index">1.5</span>
+            </div>
+          </div>
+          <div></div>
+        </section>
       </div>
     </main>
-    /*footer*/
+    <!-- footer -->
     <footer class="footer"><a class="footer-link">footer</a></footer>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
