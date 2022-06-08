@@ -31,7 +31,7 @@
       <a class="navbar-links" href="./journal.html">journal</a>
     </header>
     <!-- start of main -->
-    <main class="column main">
+    <main class="column">
       <!-- banner -->
       <section class="banner">
         <div class="banner-title">weather dashboard</div>
@@ -43,8 +43,8 @@
         </div>
       </section>
       <!-- main content -->
-      <div class="main-content-container">
-        <section class="main-tables search-table">
+      <div class="main-content">
+        <section class="column is-one-third-desktop main-tables search-table">
           <div class="column search-table-elements table-title">
             <h2>weather search</h2>
             <hr />
@@ -52,7 +52,7 @@
           <form class="search-table-elements">
             <div>
               <input
-                class="column is-full search-input"
+                class="column is-full-desktop is-full-mobile search-input"
                 type="text"
                 placeholder="enter city"
               />
@@ -61,30 +61,135 @@
           </form>
           <div class="search-table-elements cities">recent searches</div>
         </section>
-        <section class="column is-half main-tables">
-          <div class="column current-city">
-            <h2>Birmingham</h2>
-            <h3>Monday,06th June,2022</h3>
-          </div>
-          <div class="columns box tempratures-table">
-            <div class="column index-column">Temprature</div>
-            <div class="column index-column">16 &deg;c</div>
-          </div>
-          <div class="columns box tempratures-table">
-            <div class="column index-column">humidity</div>
-            <div class="column index-column">20&percnt;</div>
-          </div>
-          <div class="columns box tempratures-table">
-            <div class="column index-column">wind speed</div>
-            <div class="column index-column">10 mph</div>
-          </div>
-          <div class="columns box tempratures-table">
-            <div class="column index-column">uv index</div>
-            <div class="column index-column">
-              <span class="uv-index">1.5</span>
+
+        <section>
+          <section class="main-tables indexes-table">
+            <div class="current-city">
+              <h2>Birmingham</h2>
+              <h3>Monday,06th June,2022</h3>
             </div>
-          </div>
-          <div></div>
+            <div class="columns box">
+              <div class="column weather-indexes">Temprature</div>
+              <div class="column weather-indexes">16 &deg;c</div>
+            </div>
+            <div class="columns box">
+              <div class="column weather-indexes">humidity</div>
+              <div class="column weather-indexes">20&percnt;</div>
+            </div>
+            <div class="columns box">
+              <div class="column weather-indexes">wind speed</div>
+              <div class="column weather-indexes">10 mph</div>
+            </div>
+            <div class="columns box">
+              <div class="column weather-indexes">uv index</div>
+              <div class="column weather-indexes">
+                <span class="uv-index">1.5</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="cards-section is-fullwidth-destop">
+            <div class="card">
+              <div class="card-content">
+                <div class="column card-header">
+                  <h3>Monday, 06th 2022</h3>
+                </div>
+                <div class="box">
+                  <div class="column card-element">Temprature</div>
+                  <div class="column card-element">16 &deg;c</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">humidity</div>
+                  <div class="column card-element">20&percnt;</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">wind speed</div>
+                  <div class="column card-element">10 mph</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">uv index</div>
+                  <div class="column card-element">
+                    <span class="uv-index">1.5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card is-4-desktop is-8-mobile">
+              <div class="card-content">
+                <div class="column card-header">
+                  <h3>Monday, 06th 2022</h3>
+                </div>
+                <div class="box">
+                  <div class="column card-element">Temprature</div>
+                  <div class="column card-element">16 &deg;c</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">humidity</div>
+                  <div class="column card-element">20&percnt;</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">wind speed</div>
+                  <div class="column card-element">10 mph</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">uv index</div>
+                  <div class="column card-element">
+                    <span class="uv-index">1.5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card is-4-desktop is-8-mobile">
+              <div class="card-content">
+                <div class="column card-header">
+                  <h3>Monday, 06th 2022</h3>
+                </div>
+                <div class="box">
+                  <div class="column card-element">Temprature</div>
+                  <div class="column card-element">16 &deg;c</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">humidity</div>
+                  <div class="column card-element">20&percnt;</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">wind speed</div>
+                  <div class="column card-element">10 mph</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">uv index</div>
+                  <div class="column card-element">
+                    <span class="uv-index">1.5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card is-4-desktop is-8-mobile">
+              <div class="card-content">
+                <div class="column card-header">
+                  <h3>Monday, 06th 2022</h3>
+                </div>
+                <div class="box">
+                  <div class="column card-element">Temprature</div>
+                  <div class="column card-element">16 &deg;c</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">humidity</div>
+                  <div class="column card-element">20&percnt;</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">wind speed</div>
+                  <div class="column card-element">10 mph</div>
+                </div>
+                <div class="box">
+                  <div class="column card-element">uv index</div>
+                  <div class="column card-element">
+                    <span class="uv-index">1.5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </section>
       </div>
     </main>
