@@ -59,7 +59,7 @@ body {
   text-transform: capitalize;
   letter-spacing: 0.2rem;
   font-size: 1.5rem;
-  margin: 0.5rem;
+  margin: 1rem;
   background-color: var(--orange-web);
   border: none;
   border-radius: 0.3rem;
@@ -74,9 +74,7 @@ body {
   padding-right: 0.4rem;
 }
 /*main content tables*/
-.main-content {
-  display: flex;
-}
+
 .main-tables {
   margin: 3rem 2rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -90,20 +88,17 @@ body {
   border-radius: 0.5rem;
   background-color: var(--prussian-blue);
   color: var(--white);
+  max-height: 35rem;
 }
 .table-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 1rem;
   text-align: center;
 }
 .search-table-elements {
-  margin: 1rem;
+  margin: 2rem;
 }
 .search-input {
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 0.7rem;
   border: none;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
@@ -111,7 +106,7 @@ body {
 .search-button {
   cursor: pointer;
   width: 100%;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   background-color: var(--orange-web);
   border: none;
   border-radius: 0.5rem;
@@ -119,9 +114,9 @@ body {
   font-size: 1.2rem;
   padding: 0.5rem 0;
 }
-.cities {
-  text-align: center;
-  margin-top: 1rem;
+
+.history-cities {
+  margin: 1.5rem;
 }
 /*temprature table*/
 .indexes-table {
@@ -130,28 +125,29 @@ body {
   align-items: center;
   min-height: 20rem;
   font-size: 1.2rem;
-  background-color: var(--mikado-yellow);
+  background-color: var(--oxford-blue);
   color: var(--rich-black-fogra-29);
   border-radius: 0.5rem;
+  color: var(--white);
 }
 .current-city {
   font-size: 1.5rem;
   text-align: center;
   margin: 0.5rem 0;
 }
-.weather-indexes {
-  padding: 0.5rem;
-}
-
-.box {
+.weather-index {
   padding: 0;
   margin: 0;
   width: 70%;
   border-radius: 0.5rem;
-}
-
-.uv-index {
+  color: var(--white);
+  text-align: center;
   background-color: var(--prussian-blue);
+}
+.weather-element {
+  padding: 0.5rem;
+}
+.uv-index {
   color: var(--white);
   padding: 0.2rem 1rem;
   border-radius: 0.3rem;
@@ -159,15 +155,16 @@ body {
 /*weather cards*/
 .cards-section {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  margin: 1rem;
+  margin: 2rem;
 }
 .card {
   box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
   border-radius: 0.5rem;
   text-align: center;
   border-radius: 0.5rem;
-  background-color: var(--mikado-yellow);
+  background-color: var(--prussian-blue);
 }
 .card-content {
   display: flex;
@@ -175,13 +172,23 @@ body {
   align-items: center;
   padding: 0.5rem;
 }
+.card-header:first-child {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
 .card-header {
   font-size: 1.4rem;
-  text-align: center;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: var(--white);
-  margin: 0.5rem;
+  margin: 0.7rem;
+  color: var(--white);
+}
+.card-indexes {
+  padding: 0;
+  margin: 0;
+  width: 70%;
+  border-radius: 0.5rem;
+  color: var(--white);
 }
 .card-element {
   font-size: 1.2rem;
@@ -208,8 +215,8 @@ body {
   .main-tables {
     margin: 2rem 0;
     font-size: 1.3rem;
-    min-height: 20rem;
-    min-width: 20rem;
+    min-height: 21rem;
+    min-width: 22rem;
   }
   
   .search-input {
@@ -218,6 +225,5 @@ body {
   .cards-section {
     display: flex;
     flex-direction: column;
-    width:30rem;
   }
 } 
