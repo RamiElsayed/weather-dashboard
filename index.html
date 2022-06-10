@@ -44,7 +44,7 @@
       </section>
       <!-- main content -->
       <div class="columns is-mobile is-centered main-content">
-        <section class="main-tables search-table">
+        <section id="searchForm" class="main-tables search-table">
           <div class="search-table-elements table-title">
             <h2>weather search</h2>
             <hr />
@@ -52,13 +52,16 @@
           <form class="search-table-elements">
             <div>
               <input
+                id="search-input"
                 class="search-input"
                 type="text"
                 placeholder="enter city"
               />
             </div>
-            <button type="submit" class="search-button">search</button>
-            <div id="search-history" >
+            <button id="search-button" type="submit" class="search-button">
+              search
+            </button>
+            <div id="search-history">
               <h2 class="search-history-title">search histroy</h2>
             </div>
           </form>
@@ -76,7 +79,7 @@
               />
             </div>
             <div class="weather-index">
-              <div class="weather-element">Temprature</div>
+              <div class="weather-element">temperature</div>
               <div class="weather-element">16 &deg;c</div>
             </div>
             <div class="weather-index">
@@ -109,7 +112,7 @@
                   </div>
                 </div>
                 <div class="card-indexes">
-                  <div class="card-element">Temprature</div>
+                  <div class="card-element">temperature</div>
                   <div class="card-element">16 &deg;c</div>
                 </div>
                 <div class="card-indexes">
@@ -141,7 +144,7 @@
                   </div>
                 </div>
                 <div class="card-indexes">
-                  <div class="card-element">Temprature</div>
+                  <div class="card-element">temperature</div>
                   <div class="card-element">16 &deg;c</div>
                 </div>
                 <div class="card-indexes">
@@ -173,7 +176,7 @@
                   </div>
                 </div>
                 <div class="card-indexes">
-                  <div class="card-element">Temprature</div>
+                  <div class="card-element">temperature</div>
                   <div class="card-element">16 &deg;c</div>
                 </div>
                 <div class="card-indexes">
@@ -205,7 +208,7 @@
                   </div>
                 </div>
                 <div class="card-indexes">
-                  <div class="card-element">Temprature</div>
+                  <div class="card-element">temperature</div>
                   <div class="card-element">16 &deg;c</div>
                 </div>
                 <div class="card-indexes">
@@ -237,7 +240,7 @@
                   </div>
                 </div>
                 <div class="card-indexes">
-                  <div class="card-element">Temprature</div>
+                  <div class="card-element">temperature</div>
                   <div class="card-element">16 &deg;c</div>
                 </div>
                 <div class="card-indexes">
