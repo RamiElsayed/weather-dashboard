@@ -88,7 +88,8 @@ body {
   border-radius: 0.5rem;
   background-color: var(--prussian-blue);
   color: var(--white);
-  max-height: 35rem;
+  min-height: fit-content;
+  width: 25%;
 }
 .table-title {
   text-align: center;
@@ -102,6 +103,7 @@ body {
   border: none;
   border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+  width: 100%;
 }
 .search-button {
   cursor: pointer;
@@ -114,19 +116,28 @@ body {
   font-size: 1.2rem;
   padding: 0.5rem 0;
 }
-
-.history-cities {
-  margin: 1.5rem;
+.search-history-title, .search-alert {
+  text-align: center;
+  margin: 1rem;
+}
+.search-alert {
+  background-color: var(--orange-web);
+  border-radius: 0.6rem;
 }
 /*temprature table*/
+.weather-forecast-tables {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .indexes-table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 20rem;
+  min-height: 21rem;
+  width: 60%;
   font-size: 1.2rem;
   background-color: var(--oxford-blue);
-  color: var(--rich-black-fogra-29);
   border-radius: 0.5rem;
   color: var(--white);
 }
@@ -135,9 +146,15 @@ body {
   text-align: center;
   margin: 0.5rem 0;
 }
+.weather-icon {
+  height: 3rem;
+  border-radius: 1rem;
+}
 .weather-index {
-  padding: 0;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.1rem;
   width: 70%;
   border-radius: 0.5rem;
   color: var(--white);
@@ -145,7 +162,8 @@ body {
   background-color: var(--prussian-blue);
 }
 .weather-element {
-  padding: 0.5rem;
+  display: flex;
+  margin: 1rem;
 }
 .uv-index {
   color: var(--white);
@@ -155,7 +173,6 @@ body {
 /*weather cards*/
 .cards-section {
   display: flex;
-  flex-wrap: wrap;
   gap: 2rem;
   margin: 2rem;
 }
@@ -177,8 +194,9 @@ body {
   border-top-right-radius: 0.5rem;
 }
 .card-header {
+  display: flex;
+  flex-direction: column;
   font-size: 1.4rem;
-  padding: 0.5rem;
   border-radius: 0.5rem;
   margin: 0.7rem;
   color: var(--white);
@@ -227,3 +245,4 @@ body {
     flex-direction: column;
   }
 } 
+

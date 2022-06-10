@@ -1,33 +1,50 @@
-const readFromLs = (key,defaultValue) => {
-    const lsData = localStorage.getItem(key);
-    const parsedData = JSON.parse(lsData);
+const searchHistory = document.getElementById("search-history");
 
-    if (parsedData) {
-        return parsedData
-    } else {
-        return defaultValue
-    }
-}
+const readFromLs = (key, defaultValue) => {
+  const lsData = localStorage.getItem(key);
+  const parsedData = JSON.parse(lsData);
+
+  if (parsedData) {
+    return parsedData;
+  } else {
+    return defaultValue;
+  }
+};
 
 const renderSearches = () => {
-    const searchHistory = document.getElementById("search-history")
+  const recentSearches = readFromLs("recentSearches", []);
+  if (recentSearches.length) {
+    const getCity = (city) => { 
+        const searchedCity = document.createElement("li");
+        searchedCity.classList.add("history-cities");
+        searchedCity.textContent = city;
+        return searchedCity
+    };
+    
+    const citiesList = document.createElement("ul");
+    recentSearches.map(getCity).forEach(x => citiesList.appendChild(x));
+    console.log(citiesList)
+    // `<ul class="search-table-elements search-history"> </ul>`;
 
-    const recentSearches = readFromLs("recentSearches", [])
+    searchHistory.append(citiesList);
+  } else {
+    const alert = document.createElement("div");
+    alert.textContent = "you have no recent searches";
+    alert.classList.add("search-alert");
+    searchHistory.append(alert);
+  }
+};
 
-    if (recentSearches.length) {
-        
-    } else {
-        const alert = `<div class="notification is-warning">
-            <button class="delete"></button>
-            Primar lorem ipsum dolor sit amet, consectetur
-            adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur.
-        </div>`
-
-        searchHistory.append(alert);
-    }
-}
+const onRecentSearch = (event) => {
+  const target = event.target;
+  if (target.tagName === "LI") {
+    const city = target.textContent;
+    console.log(city);
+  }
+};
 const onReady = () => {
-    renderSearches();
-}
+  renderSearches();
+};
 
-document.addEventListener("loadstart", Onready)
+searchHistory.addEventListener("click", onRecentSearch);
+window.onload = onReady;

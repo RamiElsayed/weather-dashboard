@@ -44,50 +44,52 @@
       </section>
       <!-- main content -->
       <div class="columns is-mobile is-centered main-content">
-        <section class="column is-one-third-desktop main-tables search-table">
-          <div class="column search-table-elements table-title">
+        <section class="main-tables search-table">
+          <div class="search-table-elements table-title">
             <h2>weather search</h2>
             <hr />
           </div>
           <form class="search-table-elements">
             <div>
               <input
-                class="column is-full-desktop is-full-mobile search-input"
+                class="search-input"
                 type="text"
                 placeholder="enter city"
               />
             </div>
             <button type="submit" class="search-button">search</button>
+            <div id="search-history" >
+              <h2 class="search-history-title">search histroy</h2>
+            </div>
           </form>
-          <ul id="search-history" class="search-table-elements search-history">
-            <li class="history-cities">london</li>
-            <li class="history-cities">new york</li>
-            <li class="history-cities">tokyo</li>
-            <li class="history-cities">washington</li>
-          </ul>
         </section>
         <!--current city card-->
-        <section>
+        <section class="weather-forecast-tables">
           <section class="main-tables indexes-table">
             <div class="current-city">
               <h2>Birmingham</h2>
               <h3>Monday,06th June,2022</h3>
+              <img
+                class="weather-icon"
+                alt="weather-icon"
+                src="./assets/images/weather icon.png"
+              />
             </div>
-            <div class="columns weather-index">
-              <div class="column weather-element">Temprature</div>
-              <div class="column weather-element">16 &deg;c</div>
+            <div class="weather-index">
+              <div class="weather-element">Temprature</div>
+              <div class="weather-element">16 &deg;c</div>
             </div>
-            <div class="columns weather-index">
-              <div class="column weather-element">humidity</div>
-              <div class="column weather-element">20&percnt;</div>
+            <div class="weather-index">
+              <div class="weather-element">humidity</div>
+              <div class="weather-element">20&percnt;</div>
             </div>
-            <div class="columns weather-index">
-              <div class="column weather-element">wind speed</div>
-              <div class="column weather-element">10 mph</div>
+            <div class="weather-index">
+              <div class="weather-element">wind speed</div>
+              <div class="weather-element">10 mph</div>
             </div>
-            <div class="columns weather-index">
-              <div class="column weather-element">uv index</div>
-              <div class="column weather-element">
+            <div class="weather-index">
+              <div class="weather-element">uv index</div>
+              <div class="weather-element">
                 <span class="uv-index">1.5</span>
               </div>
             </div>
@@ -96,8 +98,47 @@
           <section class="cards-section is-fullwidth-destop">
             <div class="card">
               <div class="card-content">
-                <div class=" card-header">
+                <div class="card-header">
                   <h3>Monday, 06th 2022</h3>
+                  <div>
+                    <img
+                      class="weather-icon"
+                      alt="weather-icon"
+                      src="./assets/images/weather icon.png"
+                    />
+                  </div>
+                </div>
+                <div class="card-indexes">
+                  <div class="card-element">Temprature</div>
+                  <div class="card-element">16 &deg;c</div>
+                </div>
+                <div class="card-indexes">
+                  <div class="card-element">humidity</div>
+                  <div class="card-element">20&percnt;</div>
+                </div>
+                <div class="card-indexes">
+                  <div class="card-element">wind speed</div>
+                  <div class="card-element">10 mph</div>
+                </div>
+                <div class="card-indexes">
+                  <div class="card-element">uv index</div>
+                  <div class="card-element">
+                    <span class="uv-index">1.5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-content">
+                <div class="card-header">
+                  <h3>Monday, 06th 2022</h3>
+                  <div>
+                    <img
+                      class="weather-icon"
+                      alt="weather-icon"
+                      src="./assets/images/weather icon.png"
+                    />
+                  </div>
                 </div>
                 <div class="card-indexes">
                   <div class="card-element">Temprature</div>
@@ -123,6 +164,13 @@
               <div class="card-content">
                 <div class="card-header">
                   <h3>Monday, 06th 2022</h3>
+                  <div>
+                    <img
+                      class="weather-icon"
+                      alt="weather-icon"
+                      src="./assets/images/weather icon.png"
+                    />
+                  </div>
                 </div>
                 <div class="card-indexes">
                   <div class="card-element">Temprature</div>
@@ -148,6 +196,13 @@
               <div class="card-content">
                 <div class="card-header">
                   <h3>Monday, 06th 2022</h3>
+                  <div>
+                    <img
+                      class="weather-icon"
+                      alt="weather-icon"
+                      src="./assets/images/weather icon.png"
+                    />
+                  </div>
                 </div>
                 <div class="card-indexes">
                   <div class="card-element">Temprature</div>
@@ -173,6 +228,13 @@
               <div class="card-content">
                 <div class="card-header">
                   <h3>Monday, 06th 2022</h3>
+                  <div>
+                    <img
+                      class="weather-icon"
+                      alt="weather-icon"
+                      src="./assets/images/weather icon.png"
+                    />
+                  </div>
                 </div>
                 <div class="card-indexes">
                   <div class="card-element">Temprature</div>
