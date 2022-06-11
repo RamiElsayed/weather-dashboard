@@ -3,7 +3,7 @@ const searchHistory = document.getElementById("search-history");
 const searchForm = document.getElementById("search-form");
 const searchButton = document.getElementById("search-button");
 const weatherForecastCards = document.getElementById("weather-forecast-cards");
-const cardsSection = document.getElementById("cards")
+const cardsSection = document.getElementById("cards");
 const citiesList = document.createElement("ul");
 
 const readFromLs = (key, defaultValue) => {
@@ -20,10 +20,42 @@ const writeToLs = (key, value) => {
   const strinfiedValue = JSON.stringify(value);
   localStorage.setItem(key, strinfiedValue);
 };
-const renderTodayWeather = () => {
+const constructUrl = (baseUrl, params) => {
+  const queryParams = new URLSearchParams(params).toString();
+
+  return queryParams ? `${baseUrl}?${queryParams}` : baseUrl;
+};
+
+const fetchData = async (url, options = {}) => {
+  try {
+    const response = await fetch(url, options);
+
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    } else {
+      throw new Error("Failed to fetch data");
+    }
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+const getUviClassName = (uvi) => {
+  if (uvi >= 0 && uvi <= 2) {
+    return "bg-success";
+  }
+
+  if (uvi > 2 && uvi <= 8) {
+    return "bg-warning";
+  }
+  if (uvi > 8) {
+    return "bg-danger";
+  }
+};
+const renderTodayWeather = (Data) => {
   const todayWeatherCard = `<section class="main-tables indexes-table">
         <div class="current-city">
-        <h2>Birmingham</h2>
+        <h2>${data.cityName}</h2>
         <h3>Monday,06th June,2022</h3>
         <img
             class="weather-icon"
@@ -50,11 +82,12 @@ const renderTodayWeather = () => {
         </div>
         </div>
     </section>`;
-    console.log(todayWeatherCard)
-    weatherForecastCards.insertAdjacentHTML("beforeend", todayWeatherCard)
+  weatherForecastCards.insertAdjacentHTML("beforeend", todayWeatherCard);
 };
+
+//rendering the weather 5 cards
 const rendercards = () => {
-    const currentWeatherCards = ` <section id="cards" class="cards-section is-fullwidth-destop">
+  const currentWeatherCards = ` <section id="cards" class="cards-section is-fullwidth-destop">
         <div class="card">
             <div class="card-content">
             <div class="card-header">
@@ -216,8 +249,10 @@ const rendercards = () => {
             </div>
         </div>
         </section>`;
-        weatherForecastCards.insertAdjacentHTML("beforeend", currentWeatherCards);
-}
+  weatherForecastCards.insertAdjacentHTML("beforeend", currentWeatherCards);
+};
+
+//render the search form alert and recent searches
 const renderSearches = () => {
   citiesList.innerHTML = "";
   const recentSearches = readFromLs("recentSearches", []);
@@ -233,7 +268,6 @@ const renderSearches = () => {
       return searchedCity;
     };
     recentSearches.map(getCity).forEach((x) => citiesList.appendChild(x));
-    // `<ul class="search-table-elements search-history"> </ul>`;
 
     searchHistory.append(citiesList);
   } else {
@@ -249,18 +283,57 @@ const onRecentSearch = (event) => {
   const target = event.target;
   if (target.tagName === "LI") {
     const city = target.textContent;
-    console.log(city);
+    
   }
 };
 
-const onFormSubmit = (event) => {
+const fetchWeatherData = async(cityName) => {
+  const currentWeatherUrl = constructUrl(
+    "https://api.openweathermap.org/data/2.5/weather",
+    {
+      q: cityName,
+      appid: "cc62f1f5a783a34cac3cb5e4ca44e8a4",
+    }
+  );
+  const currentData = await fetchData(currentWeatherUrl);
+
+  const lat = currentData?.coord?.lat;
+  const lon = currentData?.coord?.lon;
+  const currentCity = currentData?.name;
+
+  const forecastDataUrl = constructUrl(
+    "https://api.openweathermap.org/data/2.5/onecall",
+    {
+      lat: lat,
+      lon: lon,
+      exclude: "minutely,hourly",
+      units: "metric",
+      appid: "cc62f1f5a783a34cac3cb5e4ca44e8a4",
+    }
+  );
+
+  const forecastData = await fetchData(forecastDataUrl);
+
+  return {
+    cityName: currentCity,
+    weatherData : forecastData,
+  };
+}
+
+//submitting form
+const onFormSubmit = async (event) => {
   event.preventDefault();
+  
   const cityName = document.getElementById("search-input").value;
+
   if (cityName) {
+    
+    const weatherData = await fetchWeatherData(cityName);
 
+    //render today's weather and cards
+    renderTodayWeather(weatherData);
+    rendercards(weatherData);
 
-    renderTodayWeather();
-    rendercards();
     const recentSearches = readFromLs("recentSearches", []);
     if (!recentSearches.includes(cityName)) {
       recentSearches.push(cityName);
