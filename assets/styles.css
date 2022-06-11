@@ -89,7 +89,7 @@ body {
   background-color: var(--prussian-blue);
   color: var(--white);
   min-height: fit-content;
-  width: 25%;
+  min-width: 25%;
 }
 .table-title {
   text-align: center;
