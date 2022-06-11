@@ -52,204 +52,82 @@ const getUviClassName = (uvi) => {
     return "bg-danger";
   }
 };
-const renderTodayWeather = (Data) => {
-  const todayWeatherCard = `<section class="main-tables indexes-table">
-        <div class="current-city">
-        <h2>${data.cityName}</h2>
-        <h3>Monday,06th June,2022</h3>
-        <img
-            class="weather-icon"
-            alt="weather-icon"
-            src="./assets/images/weather icon.png"
-        />
-        </div>
-        <div class="weather-index">
-        <div class="weather-element">temperature</div>
-        <div class="weather-element">16 &deg;c</div>
-        </div>
-        <div class="weather-index">
-        <div class="weather-element">humidity</div>
-        <div class="weather-element">20&percnt;</div>
-        </div>
-        <div class="weather-index">
-        <div class="weather-element">wind speed</div>
-        <div class="weather-element">10 mph</div>
-        </div>
-        <div class="weather-index">
-        <div class="weather-element">uv index</div>
-        <div class="weather-element">
-            <span class="uv-index">1.5</span>
-        </div>
-        </div>
+const renderTodayWeather = (data) => {
+        const todayWeatherCard = `<section class="main-tables indexes-table">
+          <div class="current-city">
+          <h2>${data.cityName}</h2>
+          <h3>${moment.unix(1654980692).format("dddd, Do MMM, YYYY")}</h3>
+          <img
+              class="weather-icon"
+              alt="weather-icon"
+              src="http://openweathermap.org/img/w/${data.weatherData.current.weather[0].icon}.png"
+          />
+          </div>
+          <div class="weather-index">
+          <div class="weather-element">temperature</div>
+          <div class="weather-element">${data.weatherData.current.temp} &deg;c</div>
+          </div>
+          <div class="weather-index">
+          <div class="weather-element">humidity</div>
+          <div class="weather-element">${data.weatherData.current.humidity}&percnt;</div>
+          </div>
+          <div class="weather-index">
+          <div class="weather-element">wind speed</div>
+          <div class="weather-element">${data.weatherData.current.wind_speed} mph</div>
+          </div>
+          <div class="weather-index">
+          <div class="weather-element">uv index</div>
+          <div class="weather-element">
+              <span class="uv-index">${data.weatherData.current.uvi}</span>
+          </div>
+          </div>
     </section>`;
   weatherForecastCards.insertAdjacentHTML("beforeend", todayWeatherCard);
 };
 
 //rendering the weather 5 cards
-const rendercards = () => {
-  const currentWeatherCards = ` <section id="cards" class="cards-section is-fullwidth-destop">
-        <div class="card">
-            <div class="card-content">
-            <div class="card-header">
-                <h3>Monday, 06th 2022</h3>
-                <div>
-                <img
-                    class="weather-icon"
-                    alt="weather-icon"
-                    src="./assets/images/weather icon.png"
-                />
-                </div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">temperature</div>
-                <div class="card-element">16 &deg;c</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">humidity</div>
-                <div class="card-element">20&percnt;</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">wind speed</div>
-                <div class="card-element">10 mph</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">uv index</div>
-                <div class="card-element">
-                <span class="uv-index">1.5</span>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-content">
-            <div class="card-header">
-                <h3>Monday, 06th 2022</h3>
-                <div>
-                <img
-                    class="weather-icon"
-                    alt="weather-icon"
-                    src="./assets/images/weather icon.png"
-                />
-                </div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">temperature</div>
-                <div class="card-element">16 &deg;c</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">humidity</div>
-                <div class="card-element">20&percnt;</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">wind speed</div>
-                <div class="card-element">10 mph</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">uv index</div>
-                <div class="card-element">
-                <span class="uv-index">1.5</span>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="card is-4-desktop is-8-mobile">
-            <div class="card-content">
-            <div class="card-header">
-                <h3>Monday, 06th 2022</h3>
-                <div>
-                <img
-                    class="weather-icon"
-                    alt="weather-icon"
-                    src="./assets/images/weather icon.png"
-                />
-                </div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">temperature</div>
-                <div class="card-element">16 &deg;c</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">humidity</div>
-                <div class="card-element">20&percnt;</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">wind speed</div>
-                <div class="card-element">10 mph</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">uv index</div>
-                <div class="card-element">
-                <span class="uv-index">1.5</span>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="card is-4-desktop is-8-mobile">
-            <div class="card-content">
-            <div class="card-header">
-                <h3>Monday, 06th 2022</h3>
-                <div>
-                <img
-                    class="weather-icon"
-                    alt="weather-icon"
-                    src="./assets/images/weather icon.png"
-                />
-                </div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">temperature</div>
-                <div class="card-element">16 &deg;c</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">humidity</div>
-                <div class="card-element">20&percnt;</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">wind speed</div>
-                <div class="card-element">10 mph</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">uv index</div>
-                <div class="card-element">
-                <span class="uv-index">1.5</span>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="card is-4-desktop is-8-mobile">
-            <div class="card-content">
-            <div class="card-header">
-                <h3>Monday, 06th 2022</h3>
-                <div>
-                <img
-                    class="weather-icon"
-                    alt="weather-icon"
-                    src="./assets/images/weather icon.png"
-                />
-                </div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">temperature</div>
-                <div class="card-element">16 &deg;c</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">humidity</div>
-                <div class="card-element">20&percnt;</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">wind speed</div>
-                <div class="card-element">10 mph</div>
-            </div>
-            <div class="card-indexes">
-                <div class="card-element">uv index</div>
-                <div class="card-element">
-                <span class="uv-index">1.5</span>
-                </div>
-            </div>
-            </div>
-        </div>
+const rendercards = (data) => {
+  const createforecastCard = (each) => {
+    const forecast = `<div class="card">
+      <div class="card-content">
+      <div class="card-header">
+          <h3>${moment.unix(each.dt).format("ddd, Do MMM")}</h3>
+          <div>
+          <img
+              class="weather-icon"
+              alt="weather-icon"
+              src="http://openweathermap.org/img/w/${each.weather[0].icon}.png"
+          />
+          </div>
+      </div>
+      <div class="card-indexes">
+          <div class="card-element">temperature</div>
+          <div class="card-element">${each.temp.day} &deg;c</div>
+      </div>
+      <div class="card-indexes">
+          <div class="card-element">humidity</div>
+          <div class="card-element">${each.humidity}&percnt;</div>
+      </div>
+      <div class="card-indexes">
+          <div class="card-element">wind speed</div>
+          <div class="card-element">${each.wind_speed} mph</div>
+      </div>
+      <div class="card-indexes">
+          <div class="card-element">uv index</div>
+          <div class="card-element">
+          <span class="uv-index">${each.uvi}</span>
+          </div>
+      </div>
+      </div>
+    </div>`
+    return forecast
+  }
+
+  const forecastCards = data.weatherData.daily.slice(1,6).map(createforecastCard).join("");
+  const currentCityForecastCards = ` <section id="cards" class="cards-section is-fullwidth-destop">
+        ${forecastCards}
         </section>`;
-  weatherForecastCards.insertAdjacentHTML("beforeend", currentWeatherCards);
+  weatherForecastCards.insertAdjacentHTML("beforeend", currentCityForecastCards);
 };
 
 //render the search form alert and recent searches
@@ -279,15 +157,22 @@ const renderSearches = () => {
   }
 };
 
+const renderWeatherData = async(cityName) => {
+  const weatherData = await fetchWeatherData(cityName);
+    weatherForecastCards.innerHTML = "";
+    renderTodayWeather(weatherData);
+    rendercards(weatherData);
+}
 const onRecentSearch = (event) => {
   const target = event.target;
   if (target.tagName === "LI") {
     const city = target.textContent;
-    
   }
 };
 
 const fetchWeatherData = async(cityName) => {
+
+
   const currentWeatherUrl = constructUrl(
     "https://api.openweathermap.org/data/2.5/weather",
     {
@@ -323,16 +208,13 @@ const fetchWeatherData = async(cityName) => {
 //submitting form
 const onFormSubmit = async (event) => {
   event.preventDefault();
-  
+
   const cityName = document.getElementById("search-input").value;
 
   if (cityName) {
     
-    const weatherData = await fetchWeatherData(cityName);
-
     //render today's weather and cards
-    renderTodayWeather(weatherData);
-    rendercards(weatherData);
+    await renderWeatherData(cityName);
 
     const recentSearches = readFromLs("recentSearches", []);
     if (!recentSearches.includes(cityName)) {
