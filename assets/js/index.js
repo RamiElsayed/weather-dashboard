@@ -42,21 +42,21 @@ const fetchData = async (url, options = {}) => {
 };
 const getUviClassName = (uvi) => {
   if (uvi >= 0 && uvi <= 2) {
-    return "bg-success";
+    return "healthy-uvi";
   }
 
   if (uvi > 2 && uvi <= 8) {
-    return "bg-warning";
+    return "neutral-uvi";
   }
   if (uvi > 8) {
-    return "bg-danger";
+    return "dangerous-uvi";
   }
 };
 const renderTodayWeather = (data) => {
         const todayWeatherCard = `<section class="main-tables indexes-table">
           <div class="current-city">
           <h2>${data.cityName}</h2>
-          <h3>${moment.unix(1654980692).format("dddd, Do MMM, YYYY")}</h3>
+          <h3>${moment.unix(data.weatherData.current.dt + data.weatherData.timezone_offset).format("dddd, Do MMM, YYYY")}</h3>
           <img
               class="weather-icon"
               alt="weather-icon"
@@ -78,7 +78,7 @@ const renderTodayWeather = (data) => {
           <div class="weather-index">
           <div class="weather-element">uv index</div>
           <div class="weather-element">
-              <span class="uv-index">${data.weatherData.current.uvi}</span>
+              <span class=${getUviClassName(data.weatherData.current.uvi)}>${data.weatherData.current.uvi}</span>
           </div>
           </div>
     </section>`;
@@ -115,7 +115,7 @@ const rendercards = (data) => {
       <div class="card-indexes">
           <div class="card-element">uv index</div>
           <div class="card-element">
-          <span class="uv-index">${each.uvi}</span>
+          <span class=${getUviClassName(each.uvi)}>${each.uvi}</span>
           </div>
       </div>
       </div>
@@ -156,17 +156,31 @@ const renderSearches = () => {
     searchHistory.append(alert);
   }
 };
-
+ const renderAlert = () => {
+  weatherForecastCards.innerHTML = "";
+  const alert = `<div class ="invalid-city-alert">you entered invalid city name<div>`
+  weatherForecastCards.insertAdjacentHTML("afterbegin", alert);
+ }
 const renderWeatherData = async(cityName) => {
-  const weatherData = await fetchWeatherData(cityName);
-    weatherForecastCards.innerHTML = "";
-    renderTodayWeather(weatherData);
-    rendercards(weatherData);
+  try {
+    const weatherData = await fetchWeatherData(cityName);
+      weatherForecastCards.innerHTML = "";
+      renderTodayWeather(weatherData);
+      rendercards(weatherData);
+
+      return true;
+    
+  } catch (error) {
+    renderAlert();
+    return false;
+  }
 }
-const onRecentSearch = (event) => {
+const onRecentSearch = async(event) => {
   const target = event.target;
   if (target.tagName === "LI") {
     const city = target.textContent;
+
+    await renderWeatherData(city);
   }
 };
 
@@ -214,10 +228,10 @@ const onFormSubmit = async (event) => {
   if (cityName) {
     
     //render today's weather and cards
-    await renderWeatherData(cityName);
+    const renderStatus = await renderWeatherData(cityName);
 
     const recentSearches = readFromLs("recentSearches", []);
-    if (!recentSearches.includes(cityName)) {
+    if (!recentSearches.includes(cityName) && renderStatus) {
       recentSearches.push(cityName);
     }
     writeToLs("recentSearches", recentSearches);

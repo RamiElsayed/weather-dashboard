@@ -1,85 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@300;400;700&family=Smokum&family=Source+Sans+Pro:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <link rel="stylesheet" href="./assets/styles.css" />
-    <title>weather dashboard</title>
-  </head>
-  <body>
-    <!--navbar-->
-    <header class="navbar">
-      <a class="navbar-links" href="./index.html">home</a>
-      <a class="navbar-links" href="./journal.html">journal</a>
-    </header>
-    <!-- start of main -->
-    <main>
-      <!-- banner -->
-      <section class="banner">
-        <div class="banner-title">weather dashboard</div>
-        <hr class="banner-line" />
-        <div>
-          <button type="submit" class="banner-button">
-            <i class="fa-solid fa-plus banner-icon"></i>new
-          </button>
-        </div>
-      </section>
-      <!-- main content -->
-      <div id="main-content" class="columns is-mobile is-centered main-content">
-        <section id="searchForm" class="main-tables search-table">
-          <div class="search-table-elements table-title">
-            <h2>weather search</h2>
-            <hr />
-          </div>
-          <form class="search-table-elements">
-            <div>
-              <input
-                id="search-input"
-                class="search-input"
-                type="text"
-                placeholder="enter city"
-              />
-            </div>
-            <button id="search-button" type="submit" class="search-button">
-              search
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@300;400;700&family=Smokum&family=Source+Sans+Pro:wght@300;400;700&display=swap"
+        rel="stylesheet"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+      />
+      <link rel="stylesheet" href="./assets/styles.css" />
+      <title>weather dashboard</title>
+    </head>
+    <body>
+      <!--navbar-->
+      <header class="navbar">
+        <a class="navbar-links" href="./index.html">home</a>
+        <a class="navbar-links" href="./journal.html">journal</a>
+      </header>
+      <!-- start of main -->
+      <main>
+        <!-- banner -->
+        <section class="banner">
+          <div class="banner-title">weather dashboard</div>
+          <hr class="banner-line" />
+          <div>
+            <button type="submit" class="banner-button">
+              <i class="fa-solid fa-plus banner-icon"></i>new
             </button>
-            <div id="search-history">
-              <h2 class="search-history-title">search histroy</h2>
+          </div>
+        </section>
+        <!-- main content -->
+        <div id="main-content" class="columns is-mobile is-centered main-content">
+          <section id="searchForm" class="main-tables search-table">
+            <div class="search-table-elements table-title">
+              <h2>weather search</h2>
+              <hr />
             </div>
-          </form>
-        </section>
-        <!--current city card-->
-        <section id="weather-forecast-cards"class="weather-forecast-tables">
-          
-        </section>
-      </div>
-    </main>
-    <!-- footer -->
-    
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="./assets/js/index.js"></script>
-  </body>
-</html>
+            <form class="search-table-elements">
+              <div>
+                <input
+                  id="search-input"
+                  class="search-input"
+                  type="text"
+                  placeholder="enter city"
+                />
+              </div>
+              <button id="search-button" type="submit" class="search-button">
+                search
+              </button>
+              <div id="search-history">
+                <h2 class="search-history-title">search histroy</h2>
+              </div>
+            </form>
+          </section>
+          <!--current city card-->
+          <section id="weather-forecast-cards"class="weather-forecast-tables">
+            
+          </section>
+        </div>
+      </main>
+      <!-- footer -->
+      
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script src="./assets/js/index.js"></script>
+    </body>
+  </html>
